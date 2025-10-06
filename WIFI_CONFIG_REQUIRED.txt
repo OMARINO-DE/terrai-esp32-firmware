@@ -1,0 +1,29 @@
+⚠️  IMPORTANT: WiFi Configuration Required
+===========================================
+
+Before the ESP32 can connect, you MUST edit the WiFi credentials in:
+
+📁 apps/firmware/esp32/src/config.h
+
+Lines to change:
+  Line 11: #define WIFI_SSID "YOUR_WIFI_SSID"
+  Line 12: #define WIFI_PASS "YOUR_WIFI_PASSWORD"
+
+Replace with your actual WiFi network name and password!
+
+Example:
+  #define WIFI_SSID "MyHomeNetwork"
+  #define WIFI_PASS "MySecurePassword123"
+
+Hardware Configuration Summary:
+================================
+✅ Server IP: 192.168.60.166
+✅ DHT11 Sensor: GPIO26
+✅ Fan Control: GPIO27
+✅ LCD I2C: Address 0x27 (SDA=21, SCL=22)
+✅ Device ID: gh-esp32
+
+After updating WiFi credentials:
+- Save the file
+- The firmware will be re-compiled automatically
+- Flash will proceed with updated configuration

@@ -1,0 +1,42 @@
+// Configuration template for FarmOS ESP32 firmware
+// Copy this file to config.h and update with your settings
+
+#ifndef CONFIG_H
+#define CONFIG_H
+
+// WiFi Configuration
+#define WIFI_SSID "YOUR_WIFI_SSID"
+#define WIFI_PASS "YOUR_WIFI_PASSWORD"
+
+// MQTT Configuration
+#define MQTT_HOST "your-broker.example.com"  // Your MQTT broker IP or hostname
+#define MQTT_PORT 1883
+#define MQTT_USER "pocuser"
+#define MQTT_PASS "pocpass123"
+
+// Device Configuration
+#define DEVICE_ID "gh-001"  // Unique device identifier
+#define FIRMWARE_VERSION "esp32-poc-0.1.0"
+
+// GPIO Pin Configuration
+#define FAN_PIN 25           // GPIO pin for fan relay/MOSFET
+#define DHT_PIN 4            // GPIO pin for DHT22 sensor
+#define SHT31_SDA 21         // I2C SDA for SHT31 (default)
+#define SHT31_SCL 22         // I2C SCL for SHT31 (default)
+
+// Timing Configuration (milliseconds)
+#define TELEMETRY_INTERVAL 30000   // Send telemetry every 30 seconds
+#define WIFI_RECONNECT_DELAY 5000  // Wait 5 seconds before WiFi reconnect
+#define MQTT_RECONNECT_DELAY 5000  // Wait 5 seconds before MQTT reconnect
+
+// Default Thresholds (used if no server config received)
+#define DEFAULT_TEMP_ON 28.0
+#define DEFAULT_TEMP_OFF 26.0
+#define DEFAULT_RH_ON 80.0
+#define DEFAULT_RH_OFF 75.0
+
+// Optional: OTA Update Configuration
+// #define OTA_ENABLED
+// #define OTA_URL "http://your-server.com/firmware.bin"
+
+#endif // CONFIG_H
